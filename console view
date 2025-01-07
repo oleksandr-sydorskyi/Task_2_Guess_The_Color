@@ -1,0 +1,508 @@
+Microsoft Windows [Version 10.0.26100.2605]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\Users\ASUS>mvn archetype:generate -DgroupId=org.author.demo -DartifactId=maven02 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] >>> maven-archetype-plugin:3.2.1:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO]
+[INFO] <<< maven-archetype-plugin:3.2.1:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO]
+[INFO]
+[INFO] --- maven-archetype-plugin:3.2.1:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Batch mode
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: basedir, Value: C:\Users\ASUS
+[INFO] Parameter: package, Value: org.author.demo
+[INFO] Parameter: groupId, Value: org.author.demo
+[INFO] Parameter: artifactId, Value: maven02
+[INFO] Parameter: packageName, Value: org.author.demo
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] project created from Old (1.x) Archetype in dir: C:\Users\ASUS\maven02
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.066 s
+[INFO] Finished at: 2025-01-07T15:00:31+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS>cd maven02
+
+C:\Users\ASUS\maven02>mvn package
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven02 ---
+[INFO] Building jar: C:\Users\ASUS\maven02\target\maven02-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.289 s
+[INFO] Finished at: 2025-01-07T15:03:14+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>java -cp target\maven02-1.0-SNAPSHOT.jar org.author.demo.App
+Hello World!
+
+C:\Users\ASUS\maven02>tree /F
+Folder PATH listing
+Volume serial number is BF6C-7ED0
+C:.
+│   pom.xml
+│
+├───src
+│   ├───main
+│   │   └───java
+│   │       └───org
+│   │           └───author
+│   │               └───demo
+│   │                       App.java
+│   │                       ColorQuiz.java
+│   │
+│   └───test
+│       └───java
+│           └───org
+│               └───author
+│                   └───demo
+│                           AppTest.java
+│
+└───target
+    │   maven02-1.0-SNAPSHOT.jar
+    │
+    ├───classes
+    │   └───org
+    │       └───author
+    │           └───demo
+    │                   App.class
+    │
+    ├───generated-sources
+    │   └───annotations
+    ├───generated-test-sources
+    │   └───test-annotations
+    ├───maven-archiver
+    │       pom.properties
+    │
+    ├───maven-status
+    │   └───maven-compiler-plugin
+    │       ├───compile
+    │       │   └───default-compile
+    │       │           createdFiles.lst
+    │       │           inputFiles.lst
+    │       │
+    │       └───testCompile
+    │           └───default-testCompile
+    │                   createdFiles.lst
+    │                   inputFiles.lst
+    │
+    ├───surefire-reports
+    │       org.author.demo.AppTest.txt
+    │       TEST-org.author.demo.AppTest.xml
+    │
+    └───test-classes
+        └───org
+            └───author
+                └───demo
+                        AppTest.class
+
+
+C:\Users\ASUS\maven02>mvn clean
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven02 ---
+[INFO] Deleting C:\Users\ASUS\maven02\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.262 s
+[INFO] Finished at: 2025-01-07T15:13:12+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>mvn package
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ASUS\maven02\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven02 ---
+[INFO] Building jar: C:\Users\ASUS\maven02\target\maven02-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.308 s
+[INFO] Finished at: 2025-01-07T15:13:28+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>java -cp target\maven02-1.0-SNAPSHOT.jar org.author.demo.App
+The guess counter should match the number of guesses.
+Check RED 10 times...
+The guess counter: 10
+The number of guesses: 3
+Error!
+Check GREEN 10 times...
+The guess counter: 10
+The number of guesses: 3
+Error!
+Check BLUE 10 times...
+The guess counter: 10
+The number of guesses: 6
+Error!
+
+C:\Users\ASUS\maven02>mvn clean
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven02 ---
+[INFO] Deleting C:\Users\ASUS\maven02\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.257 s
+[INFO] Finished at: 2025-01-07T15:16:34+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>mvn test
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ASUS\maven02\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec <<< FAILURE!
+guessCounterMatchesTheNumberOfGuesses(org.author.demo.AppTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+        at org.junit.Assert.fail(Assert.java:88)
+        at org.author.demo.AppTest.guessCounterMatchesTheNumberOfGuesses(AppTest.java:10)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+        at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+        at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+        at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+        at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+        at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+        at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+        at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+        at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+
+Results :
+
+Failed tests:   guessCounterMatchesTheNumberOfGuesses(org.author.demo.AppTest): Not yet implemented
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.219 s
+[INFO] Finished at: 2025-01-07T15:16:43+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project maven02: There are test failures.
+[ERROR]
+[ERROR] Please refer to C:\Users\ASUS\maven02\target\surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+C:\Users\ASUS\maven02>mvn clean
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven02 ---
+[INFO] Deleting C:\Users\ASUS\maven02\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.306 s
+[INFO] Finished at: 2025-01-07T15:36:04+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>mvn test
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ASUS\maven02\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.198 s
+[INFO] Finished at: 2025-01-07T15:36:13+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>mvn package
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven02 ---
+[INFO] Building jar: C:\Users\ASUS\maven02\target\maven02-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.694 s
+[INFO] Finished at: 2025-01-07T15:36:44+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>> java -cp target\maven02-1.0-SNAPSHOT.jar org.author.demo.App
+'-cp' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\ASUS\maven02>java -cp target\maven02-1.0-SNAPSHOT.jar org.author.demo.App
+The guess counter should match the number of guesses.
+Check RED 10 times...
+The guess counter: 3
+The number of guesses: 3
+Ok.
+Check GREEN 10 times...
+The guess counter: 1
+The number of guesses: 1
+Ok.
+Check BLUE 10 times...
+The guess counter: 6
+The number of guesses: 6
+Ok.
+
+C:\Users\ASUS\maven02>mvn clean package
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< org.author.demo:maven02 >-----------------------
+[INFO] Building maven02 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven02 ---
+[INFO] Deleting C:\Users\ASUS\maven02\target
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ASUS\maven02\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven02 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\maven02\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven02 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\ASUS\maven02\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven02 ---
+[INFO] Surefire report directory: C:\Users\ASUS\maven02\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.author.demo.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven02 ---
+[INFO] Building jar: C:\Users\ASUS\maven02\target\maven02-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.431 s
+[INFO] Finished at: 2025-01-07T15:47:06+02:00
+[INFO] ------------------------------------------------------------------------
+
+C:\Users\ASUS\maven02>java -cp target/maven02-1.0-SNAPSHOT.jar org.author.demo.App RED
+false
+
+C:\Users\ASUS\maven02>java -cp target/maven02-1.0-SNAPSHOT.jar org.author.demo.App GREEN
+true
+
+C:\Users\ASUS\maven02>java -cp target/maven02-1.0-SNAPSHOT.jar org.author.demo.App BLUE
+false
+
+C:\Users\ASUS\maven02>java -cp target/maven02-1.0-SNAPSHOT.jar org.author.demo.App INVALID
+Invalid color specified. Please use RED, GREEN, or BLUE.
+
+C:\Users\ASUS\maven02>
